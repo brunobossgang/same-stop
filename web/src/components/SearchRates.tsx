@@ -35,8 +35,12 @@ export default function SearchRates() {
   }));
 
   const blackRate = searchRates.black ?? 0;
+  const hispanicRate = searchRates.hispanic ?? 0;
   const whiteRate = searchRates.white ?? 0;
-  const ratio = whiteRate > 0 ? (blackRate / whiteRate).toFixed(1) : "N/A";
+  const bwRatio = whiteRate > 0 ? (blackRate / whiteRate).toFixed(1) : "N/A";
+  const hwRatio = whiteRate > 0 ? (hispanicRate / whiteRate).toFixed(1) : "N/A";
+  const worstRace = Number(hwRatio) > Number(bwRatio) ? "Hispanic" : "Black";
+  const worstRatio = Number(hwRatio) > Number(bwRatio) ? hwRatio : bwRatio;
 
   return (
     <Section id="search" dark={false}>
@@ -74,12 +78,19 @@ export default function SearchRates() {
         </ResponsiveContainer>
       </div>
 
-      <div className="mt-6 flex items-center gap-3 bg-slate-800/50 rounded-xl p-4">
-        <span className="text-4xl font-black text-rose-500">{ratio}×</span>
-        <span className="text-white/70">
-          Black drivers are searched at <span className="text-rose-400 font-semibold">{ratio}×</span> the
-          rate of White drivers in {selectedState}.
-        </span>
+      <div className="mt-6 flex flex-wrap gap-4">
+        <div className="flex-1 min-w-[200px] flex items-center gap-3 bg-slate-800/50 rounded-xl p-4">
+          <span className="text-3xl font-black text-rose-500">{bwRatio}×</span>
+          <span className="text-white/70 text-sm">
+            <span className="text-rose-400 font-semibold">Black</span> vs White search rate in {selectedState}
+          </span>
+        </div>
+        <div className="flex-1 min-w-[200px] flex items-center gap-3 bg-slate-800/50 rounded-xl p-4">
+          <span className="text-3xl font-black text-amber-500">{hwRatio}×</span>
+          <span className="text-white/70 text-sm">
+            <span className="text-amber-400 font-semibold">Hispanic</span> vs White search rate in {selectedState}
+          </span>
+        </div>
       </div>
     </Section>
   );

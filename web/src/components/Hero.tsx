@@ -22,17 +22,25 @@ function AnimatedCounter({ target, duration = 2000, suffix = "" }: { target: num
   return <span ref={ref}>{value.toFixed(1)}{suffix}</span>;
 }
 
-// Average Black/White search rate ratio across states
-const avgRatio = (() => {
+// Average minority/White search rate ratios across states
+const { avgBlackRatio, avgHispanicRatio } = (() => {
   const states = data.summary.states;
-  let sum = 0;
+  let bSum = 0, hSum = 0, bCount = 0, hCount = 0;
   for (const state of states) {
     const b = data.search_rates.black.find(s => s.state === state)?.rate ?? 0;
+    const h = data.search_rates.hispanic.find(s => s.state === state)?.rate ?? 0;
     const w = data.search_rates.white.find(s => s.state === state)?.rate ?? 0;
-    if (w > 0) sum += b / w;
+    if (w > 0 && b > 0) { bSum += b / w; bCount++; }
+    if (w > 0 && h > 0) { hSum += h / w; hCount++; }
   }
-  return sum / states.length;
+  return {
+    avgBlackRatio: bCount > 0 ? bSum / bCount : 0,
+    avgHispanicRatio: hCount > 0 ? hSum / hCount : 0,
+  };
 })();
+
+const worstGroup = avgHispanicRatio > avgBlackRatio ? "Hispanic" : "Black";
+const worstRatio = Math.max(avgBlackRatio, avgHispanicRatio);
 
 function LiveTicker() {
   const [seconds, setSeconds] = useState(0);
@@ -77,7 +85,7 @@ export default function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-rose-400/80">
-          72 Million Traffic Stops Exposed
+          {(data.summary.total_stops / 1_000_000).toFixed(1)} Million Traffic Stops · {data.summary.num_states} States
         </p>
 
         <h1 className="text-5xl font-extrabold leading-tight md:text-7xl lg:text-8xl">
@@ -87,21 +95,26 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto mt-8 max-w-2xl text-lg text-white/60 md:text-xl">
-          Black drivers are searched at
+          Black and Hispanic drivers are searched at up to
         </p>
 
         <div className="mt-6 text-6xl font-black text-rose-500 md:text-8xl">
-          <AnimatedCounter target={avgRatio} suffix="×" />
+          <AnimatedCounter target={worstRatio} suffix="×" />
         </div>
 
         <p className="mt-4 text-lg text-white/50">
-          the rate of White drivers — yet contraband is found less often
+          the rate of White drivers — yet contraband is found <em>less</em> often
         </p>
+
+        <div className="mt-4 flex justify-center gap-6 text-sm text-white/40">
+          <span>Black: <span className="text-rose-400 font-semibold">{avgBlackRatio.toFixed(1)}×</span></span>
+          <span>Hispanic: <span className="text-amber-400 font-semibold">{avgHispanicRatio.toFixed(1)}×</span></span>
+        </div>
 
         <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/40 text-sm">
           <div>
             <span className="block text-2xl font-bold text-white/80">
-              {(data.summary.total_stops / 1_000_000).toFixed(0)}M
+              {(data.summary.total_stops / 1_000_000).toFixed(1)}M
             </span>
             stops analyzed
           </div>
@@ -113,7 +126,7 @@ export default function Hero() {
           </div>
           <div>
             <span className="block text-2xl font-bold text-white/80">
-              2000–2018
+              2000–2020
             </span>
             time span
           </div>

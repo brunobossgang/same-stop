@@ -5,8 +5,11 @@ import { useState } from "react";
 const links = [
   { href: "#search", label: "Search" },
   { href: "#evidence", label: "Evidence" },
+  { href: "#calculator", label: "Calculator" },
+  { href: "#map", label: "Map" },
   { href: "#states", label: "States" },
   { href: "#trend", label: "Trend" },
+  { href: "#rights", label: "Rights" },
   { href: "#act", label: "Act" },
 ];
 
@@ -16,8 +19,8 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 z-50 w-full bg-slate-950/80 backdrop-blur-md border-b border-white/5">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <a href="#" className="text-sm font-bold tracking-wider text-white/90">
-          SAME STOP
+        <a href="https://samecrimedifferenttime.org" className="text-sm font-bold tracking-wider text-white/90 hover:text-rose-400 transition-colors">
+          JUSTICE INDEX
         </a>
         <button
           className="md:hidden text-white/70"

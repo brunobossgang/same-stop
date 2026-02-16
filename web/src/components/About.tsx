@@ -39,7 +39,7 @@ export default function About() {
           <h3 className="text-lg font-semibold text-white/80">Methodology</h3>
           <p className="mt-2">
             We analyze search rates, hit rates (the &ldquo;outcome test&rdquo;), and yearly trends across
-            4 states with the most complete data: California, Florida, Illinois, and North Carolina.
+            13 states with the most complete data, from coast to coast.
             Search rates measure how often stopped drivers are searched. Hit rates measure how often
             those searches find contraband. The outcome test — if a group is searched more but
             contraband is found less often — provides evidence of bias.
@@ -49,7 +49,7 @@ export default function About() {
         <div>
           <h3 className="text-lg font-semibold text-white/80">Limitations</h3>
           <ul className="mt-2 list-disc list-inside space-y-1">
-            <li>Only 4 states with sufficiently complete data are included</li>
+            <li>13 of 33 available states had sufficiently complete search data</li>
             <li>Data spans different time periods per state (2000–2018)</li>
             <li>Some states lack hit rate data (Florida)</li>
             <li>Observational data cannot prove causation, but patterns are consistent</li>
@@ -58,18 +58,30 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/30">
-        <p>
-          Part of the{" "}
-          <a
-            href="https://samecrimedifferenttime.org"
-            className="text-rose-400/60 hover:text-rose-400 underline"
-          >
-            Same X, Different Y
-          </a>{" "}
-          project — data-driven investigations into systemic inequality.
+      {/* Cross-link banner */}
+      <div className="mt-12 bg-gradient-to-r from-rose-500/10 to-amber-500/10 border border-rose-500/20 rounded-2xl p-6">
+        <p className="text-sm font-medium uppercase tracking-wider text-rose-400/80 mb-2">
+          Part of the Same X, Different Y Project
         </p>
-        <p className="mt-2">Built with public data. Open for scrutiny.</p>
+        <p className="text-white/70">
+          Traffic stops are just the beginning. The same bias follows people through
+          the entire justice system — from the stop, to the search, to the courtroom.
+        </p>
+        <a
+          href="https://samecrimedifferenttime.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 rounded-xl text-rose-400 hover:text-rose-300 text-sm font-semibold transition-colors"
+        >
+          Same Crime, Different Time → Federal Sentencing Bias
+        </a>
+      </div>
+
+      <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-white/30">
+        <p>
+          <a href="https://github.com/brunobossgang/same-stop" target="_blank" rel="noopener noreferrer" className="text-rose-400/60 hover:text-rose-400 underline">Open source</a>
+          {" "}· Built with public data · Open for scrutiny
+        </p>
       </div>
     </Section>
   );

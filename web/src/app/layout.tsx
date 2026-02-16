@@ -6,13 +6,13 @@ import { Analytics } from "@vercel/analytics/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Same Stop. Different Outcome. | Racial Disparities in Traffic Stops",
+  title: "Justice Index | Same Stop, Different Outcome — Racial Disparities in Traffic Stops",
   description:
-    "72 million traffic stops expose stark racial disparities in police searches. Black drivers are searched 2× more often — but contraband is found less frequently.",
+    "72 million traffic stops expose stark racial disparities in police searches. Black and Hispanic drivers are searched up to 2× more often — but contraband is found less frequently.",
   openGraph: {
-    title: "Same Stop. Different Outcome.",
+    title: "Justice Index | Same Stop, Different Outcome",
     description:
-      "Black drivers are searched 2× more often than White drivers, yet contraband is found less frequently. 72M stops. 4 states. The data speaks.",
+      "Black and Hispanic drivers are searched up to 2× more often than White drivers, yet contraband is found less frequently. 72M+ stops. The data speaks.",
     url: "https://samestopdifferentoutcome.org",
     type: "website",
   },

@@ -77,10 +77,12 @@ export default function SmokingGun() {
       <div className="mt-8 bg-rose-500/10 border border-rose-500/20 rounded-xl p-6">
         <p className="text-rose-400 font-semibold">Key Insight</p>
         <p className="mt-2 text-white/70">
-          In every state, Black and Hispanic drivers are searched at higher rates, but contraband
-          is found at <span className="text-white font-semibold">equal or lower rates</span> compared
-          to White drivers. This pattern — higher search rates with lower hit rates — is strong
-          evidence of racial bias in search decisions.
+          In every state analyzed, both Black and Hispanic drivers are searched at significantly
+          higher rates than White drivers — and in many states, Hispanic drivers face the
+          <span className="text-amber-400 font-semibold"> highest search rates of any group</span>.
+          Yet contraband is found at <span className="text-white font-semibold">equal or lower rates</span> for
+          both groups compared to White drivers. This pattern is strong evidence of racial bias
+          in search decisions.
         </p>
       </div>
     </Section>
