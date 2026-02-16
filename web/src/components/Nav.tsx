@@ -44,6 +44,14 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <a
+            href="https://samecrimedifferenttime.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-rose-400/70 hover:text-rose-400 transition-colors font-medium"
+          >
+            Sentencing ↗
+          </a>
         </div>
       </div>
     </nav>
