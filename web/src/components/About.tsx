@@ -39,7 +39,7 @@ export default function About() {
           <h3 className="text-lg font-semibold text-white/80">Methodology</h3>
           <p className="mt-2">
             We analyze search rates, hit rates (the &ldquo;outcome test&rdquo;), and yearly trends across
-            13 states with the most complete data, from coast to coast.
+            16 states with the most complete data, from coast to coast.
             Search rates measure how often stopped drivers are searched. Hit rates measure how often
             those searches find contraband. The outcome test — if a group is searched more but
             contraband is found less often — provides evidence of bias.
@@ -70,7 +70,7 @@ export default function About() {
         <div>
           <h3 className="text-lg font-semibold text-white/80">Limitations</h3>
           <ul className="mt-2 list-disc list-inside space-y-1">
-            <li>13 of 33 available states had sufficiently complete search data</li>
+            <li>16 of 33 available states had sufficiently complete search data</li>
             <li>Data spans different time periods per state (2000–2018)</li>
             <li>Some states lack hit rate data (Florida)</li>
             <li>Observational data cannot prove causation, but patterns are consistent</li>
