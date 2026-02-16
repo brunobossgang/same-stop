@@ -82,20 +82,30 @@ export default function About() {
       {/* Cross-link banner */}
       <div className="mt-12 bg-gradient-to-r from-rose-500/10 to-amber-500/10 border border-rose-500/20 rounded-2xl p-6">
         <p className="text-sm font-medium uppercase tracking-wider text-rose-400/80 mb-2">
-          Part of the Same X, Different Y Project
+          Justice Index · Three Investigations
         </p>
         <p className="text-white/70">
-          Traffic stops are just the beginning. The same bias follows people through
-          the entire justice system — from the stop, to the search, to the courtroom.
+          Bias doesn&apos;t stop at traffic stops. It follows people from the street
+          to the courtroom to the bank.
         </p>
-        <a
-          href="https://samecrimedifferenttime.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 rounded-xl text-rose-400 hover:text-rose-300 text-sm font-semibold transition-colors"
-        >
-          Same Crime, Different Time → Federal Sentencing Bias
-        </a>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <a
+            href="https://samecrimedifferenttime.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 rounded-xl text-rose-400 hover:text-rose-300 text-sm font-semibold transition-colors"
+          >
+            Same Crime, Different Time → Federal Sentencing
+          </a>
+          <a
+            href="https://sameloandifferentrate.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 rounded-xl text-rose-400 hover:text-rose-300 text-sm font-semibold transition-colors"
+          >
+            Same Loan, Different Rate → Mortgage Lending
+          </a>
+        </div>
       </div>
 
       <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-white/30">
