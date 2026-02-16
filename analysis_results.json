@@ -1,0 +1,90 @@
+{
+  "NC": {
+    "rows": 20286645,
+    "columns": [
+      "raw_row_number",
+      "date",
+      "time",
+      "location",
+      "county_name",
+      "subject_age",
+      "subject_race",
+      "subject_sex",
+      "officer_id_hash",
+      "department_name",
+      "type",
+      "arrest_made",
+      "citation_issued",
+      "warning_issued",
+      "outcome",
+      "contraband_found",
+      "contraband_drugs",
+      "contraband_weapons",
+      "frisk_performed",
+      "search_conducted",
+      "search_person",
+      "search_vehicle",
+      "search_basis",
+      "reason_for_frisk",
+      "reason_for_search",
+      "reason_for_stop",
+      "raw_Ethnicity",
+      "raw_Race",
+      "raw_action_description"
+    ],
+    "coverage": {
+      "subject_race": 100.0,
+      "subject_sex": 100.0,
+      "subject_age": 100.0,
+      "search_conducted": 100.0,
+      "arrest_made": 100.0,
+      "contraband_found": 3.1,
+      "outcome": 97.0,
+      "violation": null,
+      "date": 100.0
+    },
+    "date_range": "2000-01-01 00:00:00 to 2015-12-31 00:00:00",
+    "race_counts": {
+      "white": 11893673,
+      "black": 6187854,
+      "hispanic": 1576072,
+      "unknown": 242640,
+      "other": 160899,
+      "asian/pacific islander": 225489,
+      "NaN": 18
+    },
+    "race_pct": {
+      "white": 58.6,
+      "black": 30.5,
+      "hispanic": 7.8,
+      "unknown": 1.2,
+      "asian/pacific islander": 1.1,
+      "other": 0.8,
+      "NaN": 0.0
+    },
+    "search_rate": {
+      "asian/pacific islander": 1.69,
+      "black": 4.49,
+      "hispanic": 4.56,
+      "other": 2.07,
+      "unknown": 1.52,
+      "white": 2.22
+    },
+    "arrest_rate": {
+      "asian/pacific islander": 1.15,
+      "black": 2.6,
+      "hispanic": 3.82,
+      "other": 1.92,
+      "unknown": 1.17,
+      "white": 1.65
+    },
+    "hit_rate": {
+      "asian/pacific islander": 19.97,
+      "black": 26.89,
+      "hispanic": 16.42,
+      "other": 34.08,
+      "unknown": 19.01,
+      "white": 28.04
+    }
+  }
+}

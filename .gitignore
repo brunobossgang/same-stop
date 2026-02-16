@@ -1,0 +1,9 @@
+node_modules/
+.next/
+data/*.csv
+data/*.csv.gz
+data/*.zip
+.env*
+*.pyc
+__pycache__/
+.venv/
