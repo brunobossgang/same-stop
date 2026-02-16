@@ -47,6 +47,27 @@ export default function About() {
         </div>
 
         <div>
+          <h3 className="text-lg font-semibold text-white/80">Regression Analysis</h3>
+          <p className="mt-2">
+            We run logistic regressions for each state to control for confounding variables.
+            The search model predicts whether a stopped driver is searched, controlling for
+            age, sex, year, stop type, and violation category — with race as the key
+            independent variable (white drivers as reference). We report odds ratios: a value
+            of 2.0× means that group is twice as likely to be searched after accounting for
+            all other factors. The arrest model uses the same controls to predict arrest.
+            The hit rate model tests the &ldquo;outcome test&rdquo; — among searched drivers only,
+            whether contraband is found at different rates by race. Lower hit rates for
+            groups searched more frequently suggests the higher search rate is not justified
+            by contraband discovery.
+          </p>
+          <p className="mt-2">
+            Models use up to 100,000 observations per state (randomly sampled where datasets
+            are larger). Confidence intervals are 95%. Statistical significance is indicated
+            by ★ markers (★★★ = p &lt; 0.001).
+          </p>
+        </div>
+
+        <div>
           <h3 className="text-lg font-semibold text-white/80">Limitations</h3>
           <ul className="mt-2 list-disc list-inside space-y-1">
             <li>13 of 33 available states had sufficiently complete search data</li>
