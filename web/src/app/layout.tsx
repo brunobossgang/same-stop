@@ -8,13 +8,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Justice Index | Same Stop, Different Outcome — Racial Disparities in Traffic Stops",
   description:
-    "72 million traffic stops expose stark racial disparities in police searches. Black and Hispanic drivers are searched up to 2× more often — but contraband is found less frequently.",
+    "Analysis of 8.6 million traffic stops across 18 states reveals Black drivers searched up to 5× more often with lower hit rates.",
+  metadataBase: new URL("https://samestopdifferentoutcome.org"),
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "Bruno Beckman" }],
   openGraph: {
-    title: "Justice Index | Same Stop, Different Outcome",
+    title: "Same Stop, Different Outcome: Racial Profiling in Traffic Stops",
     description:
-      "Black and Hispanic drivers are searched up to 2× more often than White drivers, yet contraband is found less frequently. 72M+ stops. The data speaks.",
+      "Analysis of 8.6 million traffic stops across 18 states reveals Black drivers searched up to 5× more often with lower hit rates.",
     url: "https://samestopdifferentoutcome.org",
-    type: "website",
+    type: "article",
+    publishedTime: "2026-02-16T00:00:00Z",
+    authors: ["Bruno Beckman"],
     images: [
       {
         url: "https://samestopdifferentoutcome.org/og.png",
@@ -43,6 +50,33 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                headline: "Same Stop, Different Outcome: Racial Profiling in Traffic Stops",
+                description:
+                  "Analysis of 8.6 million traffic stops across 18 states reveals Black drivers searched up to 5× more often with lower hit rates.",
+                author: { "@type": "Person", name: "Bruno Beckman" },
+                datePublished: "2026-02-16",
+                publisher: { "@type": "Organization", name: "Justice Index", url: "https://justice-index.org" },
+                mainEntityOfPage: "https://samestopdifferentoutcome.org",
+                image: "https://samestopdifferentoutcome.org/og.png",
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Dataset",
+                name: "Traffic Stops from Stanford Open Policing Project",
+                description: "8,634,798 traffic stops from the Stanford Open Policing Project across 18 states.",
+                url: "https://samestopdifferentoutcome.org",
+                creator: { "@type": "Person", name: "Bruno Beckman" },
+              },
+            ]),
+          }}
+        />
       </head>
       <body className={`${inter.className} bg-slate-950 text-white antialiased`}>
         {children}
