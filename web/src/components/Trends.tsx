@@ -11,8 +11,8 @@ export default function Trends() {
 
   const stateData = data.by_state[selectedState as keyof typeof data.by_state];
   const trends = stateData.yearly_trends.filter(
-    (t) => !isNaN(t.white) && !isNaN(t.black) && !isNaN(t.hispanic)
-  );
+    (t: any) => !isNaN(t.white) && !isNaN(t.black)
+  ) as any[];
 
   return (
     <Section id="trend">
