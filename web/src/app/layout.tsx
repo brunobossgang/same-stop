@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Same Stop, Different Outcome | Justice Index",
     description:
-      "Black drivers searched at up to 5.1× the rate of White drivers. 7.9M stops, 16 states, Stanford Open Policing data.",
+      "Black drivers searched at up to 5.1× the rate of White drivers. 8.2M stops, 17 states, Stanford Open Policing data.",
     images: ["https://samestopdifferentoutcome.org/og.png"],
   },
 };

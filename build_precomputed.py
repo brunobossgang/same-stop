@@ -112,6 +112,10 @@ for f in sorted(os.listdir(DATA_DIR)):
     
     print(f"Processing {sc} ({name})...")
     df = pd.read_csv(path, low_memory=False)
+    if 'subject_race' not in df.columns:
+        print(f"  ✗ {name}: skipped (no subject_race column)")
+        del df; gc.collect()
+        continue
     stats = compute_stats(df)
     del df; gc.collect()
     
